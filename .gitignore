@@ -41,5 +41,6 @@ next-env.d.ts
 /.wrangler
 
 # wrangler files
+wrangler.toml
 .wrangler
 .dev.vars

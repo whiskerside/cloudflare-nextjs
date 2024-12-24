@@ -1,5 +1,5 @@
 #:schema node_modules/wrangler/config-schema.json
-name = "next-cf"
+name = "cloudflare-nextjs"
 main = ".open-next/worker.js"
 
 compatibility_date = "2024-12-20"

@@ -1,0 +1,48 @@
+{
+  "Arrow Function Component": {
+    "prefix": "sfc",
+    "body": [
+      "const $1 = ($2) => {",
+      " return ( $0 );",
+      "}",
+      " ",
+      "export default $1;"
+    ],
+    "description": "Arrow Function Component"
+  },
+
+  "Nextjs Page": {
+    "prefix": "page",
+    "body": [
+      "export default function $1() {",
+      "  return (",
+      "    <section className=\"flex flex-col\">",
+      "      $1",
+      "    </section>",
+      "  );",
+      "}"
+    ],
+    "description": "Page component without props based on Nextjs"
+  },
+
+  "Nextjs Metadata Tag": {
+    "prefix": "metatag",
+    "body": [
+      "import type { Metadata, ResolvingMetadata } from \"next\";",
+      "import { Props } from \"@/utils/types\";",
+      "",
+      "export async function generateMetadata(",
+      "  { params, searchParams }: Props,",
+      "  parent: ResolvingMetadata",
+      "): Promise<Metadata> {",
+      "  // read route params",
+      "  // const id = (await params).id;",
+      "  return {",
+      "    title: \"meta title\",",
+      "    description: \"meta description\",",
+      "  };",
+      "}"
+    ],
+    "description": "Meta tag based on Nextjs"
+  }
+}

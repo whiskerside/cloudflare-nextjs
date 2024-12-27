@@ -1,6 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Header from "@/ui/header";
+import Footer from "@/ui/footer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,8 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col">
+        <Header />
         {children}
+        <Footer />
         <GoogleAnalytics gaId="G-ID" />
       </body>
     </html>

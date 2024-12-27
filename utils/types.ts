@@ -8,3 +8,8 @@ export type AlertProps = {
   kind: string | "info";
   message: string;
 };
+
+export type BadgeProps = {
+  kind: string | "default";
+  text: string;
+};

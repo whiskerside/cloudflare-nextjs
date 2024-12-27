@@ -1,18 +1,6 @@
 {
-  "Arrow Function Component": {
-    "prefix": "sfc",
-    "body": [
-      "const $1 = ($2) => {",
-      " return ( $0 );",
-      "}",
-      " ",
-      "export default $1;"
-    ],
-    "description": "Arrow Function Component"
-  },
-
   "Nextjs Page": {
-    "prefix": "page",
+    "prefix": "dfn",
     "body": [
       "export default function $1() {",
       "  return (",

@@ -1,9 +1,7 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { Props } from "@/utils/types";
 
-import Image from "next/image";
 import Link from "next/link";
-import Alert from "@/ui/alert";
 
 export async function generateMetadata(
   { params, searchParams }: Props,
@@ -17,7 +15,7 @@ export async function generateMetadata(
   };
 }
 
-export default function Home() {
+export default function Page() {
   return (
     <section className="">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -25,12 +23,6 @@ export default function Home() {
           Get started by editing&nbsp;
         </p>
         <Link href="/about">about</Link>
-
-        <Alert kind="info" message="infor message" />
-        <Alert kind="danger" message="infor message" />
-        <Alert kind="success" message="infor message" />
-        <Alert kind="warning" message="infor message" />
-        <Alert kind="default" message="infor message" />
       </div>
     </section>
   );

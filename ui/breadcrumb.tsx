@@ -16,8 +16,6 @@ export default function Breadcrumb({ items }: { items: BreadcrumbItem[] }) {
               <Link href={item.href} className="text-gray-600 hover:underline">
                 {item.element}
               </Link>
-            ) : typeof item.element === "string" ? (
-              item.element
             ) : (
               item.element
             )}

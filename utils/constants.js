@@ -6,7 +6,8 @@ export const WEBSITE_CONTACT = "hi@web-site.com";
 export const NAV_URLS = [
   { title: "Home", url: "/" },
   { title: "About", url: "/about" },
-  { title: "Service", url: "#" },
-  { title: "Pricing", url: "/pricing" },
-  { title: "Contact", url: "/contact" },
+  // { title: "Service", url: "#" },
+  // { title: "Pricing", url: "/pricing" },
+  { title: "Components", url: "/components" },
+  // { title: "Contact", url: "/contact" },
 ];

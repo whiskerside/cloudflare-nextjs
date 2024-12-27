@@ -3,6 +3,7 @@ import { Props } from "@/utils/types";
 
 import Image from "next/image";
 import Link from "next/link";
+import Alert from "@/ui/alert";
 
 export async function generateMetadata(
   { params, searchParams }: Props,
@@ -24,6 +25,12 @@ export default function Home() {
           Get started by editing&nbsp;
         </p>
         <Link href="/about">about</Link>
+
+        <Alert kind="info" message="infor message" />
+        <Alert kind="danger" message="infor message" />
+        <Alert kind="success" message="infor message" />
+        <Alert kind="warning" message="infor message" />
+        <Alert kind="default" message="infor message" />
       </div>
     </main>
   );

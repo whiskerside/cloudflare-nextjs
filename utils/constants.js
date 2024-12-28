@@ -11,3 +11,8 @@ export const NAV_URLS = [
   { title: "Components", url: "/components" },
   // { title: "Contact", url: "/contact" },
 ];
+
+export const LANGUAGES = [
+  { locale: "en", label: "English", flag: "/lang-en.svg" },
+  { locale: "zh", label: "中文", flag: "/lang-zh.svg" },
+];

@@ -5,6 +5,7 @@ import {
   WEBSITE_URL,
   WEBSITE_LOGO,
   NAV_URLS,
+  LANGUAGES,
 } from "@/utils/constants";
 import NavLink from "./nav.link";
 
@@ -44,81 +45,30 @@ export default function Header() {
             </button>
 
             <div
-              className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
+              className="hidden z-50 my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
               id="language-dropdown-menu"
             >
               <ul className="py-2 font-medium" role="none">
                 <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                    role="menuitem"
-                  >
-                    <div className="inline-flex items-center">
-                      <Image
-                        width={30}
-                        height={48}
-                        src="/lang-en.svg"
-                        className="h-8"
-                        alt="English (US)"
-                      />
-                      English (US)
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                    role="menuitem"
-                  >
-                    <div className="inline-flex items-center">
-                      <Image
-                        width={30}
-                        height={48}
-                        src="/lang-de.svg"
-                        className="h-8"
-                        alt="Deutsch"
-                      />
-                      Deutsch
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                    role="menuitem"
-                  >
-                    <div className="inline-flex items-center">
-                      <Image
-                        width={30}
-                        height={48}
-                        src="/lang-it.svg"
-                        className="h-8"
-                        alt="Italiano"
-                      />
-                      Italiano
-                    </div>
-                  </a>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
-                    role="menuitem"
-                  >
-                    <div className="inline-flex items-center">
-                      <Image
-                        width={30}
-                        height={48}
-                        src="/lang-zh.svg"
-                        className="h-8"
-                        alt="中文 (繁體)"
-                      />
-                      中文 (繁體)
-                    </div>
-                  </Link>
+                  {LANGUAGES.map((lang) => (
+                    <a
+                      key={lang.locale}
+                      href={`/${lang.locale}`}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                      role="menuitem"
+                    >
+                      <div className="inline-flex items-center">
+                        <Image
+                          width={24}
+                          height={24}
+                          src={lang.flag}
+                          alt={lang.label}
+                          className="rounded-full mr-2"
+                        />
+                        {lang.label}
+                      </div>
+                    </a>
+                  ))}
                 </li>
               </ul>
             </div>

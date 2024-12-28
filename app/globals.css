@@ -29,6 +29,7 @@ body {
 
 section {
   @apply my-5 max-w-screen-lg mx-auto;
+  @apply px-2 md:px-0;
 }
 
 section.hero {

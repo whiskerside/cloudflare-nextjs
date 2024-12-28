@@ -5,7 +5,6 @@ import Alert from "@/ui/alert";
 export default function Page() {
   const breadcrumbItems = [
     { href: "/", element: "Home" },
-    { href: "/category/electronics", element: "Electronics" },
     {
       href: "/product/123",
       element: (
@@ -19,8 +18,8 @@ export default function Page() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <div className="max-w-screen-lg mx-auto p-3 px-0 mb-6">
-        <div className="pb-3">
+      <section className="space-y-4">
+        <div className="">
           <Badge kind="pink" text="pink" />
           <Badge kind="purple" text="purple" />
           <Badge kind="indigo" text="indigo" />
@@ -30,15 +29,14 @@ export default function Page() {
           <Badge kind="dark" text="dark" />
           <Badge kind="default" text="default" />
         </div>
-        <div className="my-3">
+        <div className="my-1">
           <Alert kind="info" message="infor message" />
           <Alert kind="danger" message="infor message" />
           <Alert kind="success" message="infor message" />
           <Alert kind="warning" message="infor message" />
           <Alert kind="default" message="infor message" />
         </div>
-      </div>
-      ;
+      </section>
     </>
   );
 }

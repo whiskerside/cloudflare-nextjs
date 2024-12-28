@@ -5,7 +5,7 @@ import { WEBSITE_BRAND, WEBSITE_URL, WEBSITE_LOGO } from "@/utils/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-gray-900">
+    <footer className="border-m border-t-2 border-s-amber-800 bg-white dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -21,9 +21,56 @@ export default function Footer() {
                 {WEBSITE_BRAND}
               </span>
             </Link>
+            <div className="space-y-3 hidden sm:block">
+              <div className="mt-3 text-sm text-gray-500 sm:text-center dark:text-gray-400">
+                © 2024{" "}
+                <Link className="hover:underline" href={WEBSITE_URL}>
+                  {WEBSITE_BRAND}
+                </Link>
+                . All Rights Reserved.
+              </div>
+              <div className="flex mt-4 sm:mt-0">
+                <Link
+                  href={"https://facebook.com"}
+                  title={`${WEBSITE_BRAND} on Facebook`}
+                  className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+                >
+                  <Image
+                    src="/facebook.svg"
+                    width={20}
+                    height={20}
+                    alt="Facebook"
+                  />
+                </Link>
+                <Link
+                  href={"https://twitter.com"}
+                  title={`${WEBSITE_BRAND} on Twitter`}
+                  className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-3"
+                >
+                  <Image
+                    src="/twitter.svg"
+                    width={20}
+                    height={20}
+                    alt={`${WEBSITE_BRAND} on Twitter`}
+                  />
+                </Link>
+                <Link
+                  href={"https://github.com"}
+                  title={`${WEBSITE_BRAND} on Github`}
+                  className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-3"
+                >
+                  <Image
+                    src="/github.svg"
+                    width={20}
+                    height={20}
+                    alt={`${WEBSITE_BRAND} on Github`}
+                  />
+                </Link>
+              </div>
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
-            <div>
+            {/* <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                 Resources
               </h2>
@@ -42,7 +89,7 @@ export default function Footer() {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <div>
               <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
                 Follow us
@@ -87,8 +134,8 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <hr className="my-3 border-gray-100 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between">
+        <hr className="sm:hidden my-3 border-gray-100 sm:mx-auto dark:border-gray-700" />
+        <div className="md:hidden sm:flex sm:items-center sm:justify-between">
           <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2024{" "}
             <Link className="hover:underline" href={WEBSITE_URL}>
@@ -100,7 +147,7 @@ export default function Footer() {
             <Link
               href={"https://facebook.com"}
               title={`${WEBSITE_BRAND} on Facebook`}
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-3"
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
             >
               <Image
                 src="/facebook.svg"

@@ -19,7 +19,7 @@ export default function Page() {
   return (
     <>
       <Breadcrumb items={breadcrumbItems} />
-      <div className="max-w-screen-xl mx-auto p-3 px-0 mb-6">
+      <div className="max-w-screen-lg mx-auto p-3 px-0 mb-6">
         <div className="pb-3">
           <Badge kind="pink" text="pink" />
           <Badge kind="purple" text="purple" />

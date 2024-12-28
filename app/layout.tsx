@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col flex-grow">
         <Header />
-        <main className="min-h-screen py-3">{children}</main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
         <GoogleAnalytics gaId="G-ID" />
       </body>

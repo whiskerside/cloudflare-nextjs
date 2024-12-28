@@ -10,8 +10,8 @@ import NavLink from "./nav.link";
 
 export default function Header() {
   return (
-    <header>
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+    <header className="border-b-2 border-s-amber-800">
+      <nav className="mx-auto w-full max-w-screen-xl bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <Link
             href={`${WEBSITE_URL}`}

@@ -1,4 +1,6 @@
 import React from "react";
+import { appConfig } from "@/lib/app.config";
+import { Navigations } from "@/lib/types";
 import { getLocale } from "next-intl/server";
 import { Navigation } from "./navigation";
 import { Footer } from "./footer";
@@ -9,36 +11,11 @@ export async function Layout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
-  // categories data
-  const categories: {
-    name: string;
-    src: string;
-    description: string;
-    link: string;
-  }[] = [
-    {
-      name: "analytics",
-      src: "analytics.jsonc",
-      link: "analytics",
-      description: "Tools for tracking and analyzing website data.",
-    },
-    {
-      name: "database",
-      src: "database.jsonc",
-      link: "database",
-      description: "Services for storing and managing data.",
-    },
-    {
-      name: "deployment",
-      src: "deployment.jsonc",
-      link: "deployment",
-      description: "Tools for automating application deployment.",
-    },
-  ];
+  const navigations: Navigations = { items: appConfig.navigations };
 
   return (
     <div className="min-h-screen bg-background font-sans antialiased">
-      <Navigation categories={categories} />
+      <Navigation items={navigations.items} />
       <main className="flex-1">{children}</main>
       <Footer />
     </div>

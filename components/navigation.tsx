@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
+import { cn } from "@/lib/utils";
+import { MenuIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 import { Link, usePathname } from "@/i18n/routing";
-import { Github, MenuIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import Image from "next/image";
-import IconImage from "../public/favicon.svg";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -17,46 +17,17 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { Navigations } from "@/lib/types";
 // import { ThemeModeButton } from "@/components/ThemeModeButton";
 import { LocaleButton } from "@/components/locale.button";
-import { useTranslations } from "next-intl";
-type categoriesType = {
-  name: string;
-  src: string;
-  description: string;
-  link: string;
-};
 
-type navigationProp = {
-  categories: categoriesType[];
-};
-
-export const Navigation = ({ categories }: navigationProp) => {
+export const Navigation = ({ items }: Navigations) => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const t = useTranslations("navigation");
 
-  const menuItems: {
-    label: string;
-    href: string;
-    trigger: boolean;
-  }[] = [
-    {
-      label: t("home"),
-      href: "/",
-      trigger: false,
-    },
-    {
-      label: t("category"),
-      href: "/category",
-      trigger: true,
-    },
-    {
-      label: t("changeLog"),
-      href: "/changelog",
-      trigger: false,
-    },
-  ];
+  const tc = useTranslations("common");
+  const t = useTranslations("navigations");
+
   const isMenuItemActive = (href: string) => {
     // console.log(pathname, href);
     return pathname === href;
@@ -68,7 +39,7 @@ export const Navigation = ({ categories }: navigationProp) => {
 
   const size = 30;
   const ListItem = React.forwardRef<
-    React.ElementRef<"a">,
+    React.ComponentRef<"a">,
     React.ComponentPropsWithoutRef<"a">
   >(({ className, title, children, ...props }, ref) => {
     return (
@@ -91,7 +62,9 @@ export const Navigation = ({ categories }: navigationProp) => {
       </li>
     );
   });
+
   ListItem.displayName = "ListItem";
+
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background px-3">
       <div className="container flex h-16 items-center justify-between">
@@ -109,50 +82,52 @@ export const Navigation = ({ categories }: navigationProp) => {
           <nav className="hidden md:flex gap-6">
             <NavigationMenu>
               <NavigationMenuList>
-                {menuItems.map((menuItem) => (
-                  <NavigationMenuItem key={menuItem.href}>
-                    {menuItem.trigger ? (
+                {items.map((item) => (
+                  <NavigationMenuItem key={item.href}>
+                    {item.trigger && item.childs ? (
                       <>
                         <NavigationMenuTrigger
                           className={cn(
                             "font-medium",
-                            menuItem.href === pathname && "font-extrabold"
+                            item.href === pathname && "font-extrabold"
                           )}
                         >
-                          {menuItem.label}
+                          {t(item.label)}
                         </NavigationMenuTrigger>
                         <NavigationMenuContent>
                           <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-3 lg:w-[600px] ">
-                            {categories.map((category) => (
+                            {item.childs.map((child) => (
                               <ListItem
-                                key={category.name}
-                                title={category.name}
-                                href={`/category/${category.link}`}
+                                key={child.label}
+                                title={child.label}
+                                href={`/category/${child.href}`}
                                 className="capitalize"
                               >
-                                {category.description}
+                                {child.description}
                               </ListItem>
                             ))}
-                            <ListItem
-                              title={t("more")}
-                              href={menuItem.href}
-                              className="capitalize border border-muted  bg-gradient-to-b  from-muted/50 to-muted/20"
-                            >
-                              {t("moreDesc")}
-                            </ListItem>
+                            {item.hasMore ? (
+                              <ListItem
+                                title={tc("more")}
+                                href={item.href}
+                                className="capitalize border border-muted  bg-gradient-to-b  from-muted/50 to-muted/20"
+                              >
+                                {tc("moreDesc")}
+                              </ListItem>
+                            ) : null}
                           </ul>
                         </NavigationMenuContent>
                       </>
                     ) : (
-                      <Link href={menuItem.href} legacyBehavior passHref>
+                      <Link href={item.href} legacyBehavior passHref>
                         <NavigationMenuLink
                           className={cn(
                             navigationMenuTriggerStyle(),
                             "font-medium",
-                            menuItem.href === pathname && "font-extrabold"
+                            item.href === pathname && "font-extrabold"
                           )}
                         >
-                          {menuItem.label}
+                          {t(item.label)}
                         </NavigationMenuLink>
                       </Link>
                     )}
@@ -188,16 +163,16 @@ export const Navigation = ({ categories }: navigationProp) => {
             </SheetTrigger>
             <SheetContent className="w-[250px]" side="right">
               <div className="flex flex-col items-start justify-center">
-                {menuItems.map((menuItem) => (
+                {items.map((item) => (
                   <Link
-                    key={menuItem.href}
-                    href={menuItem.href}
+                    key={item.href}
+                    href={item.href}
                     className={cn(
                       "block px-3 py-2 text-lg",
-                      isMenuItemActive(menuItem.href) ? "font-bold" : ""
+                      isMenuItemActive(item.href) ? "font-bold" : ""
                     )}
                   >
-                    {menuItem.label}
+                    {t(item.label)}
                   </Link>
                 ))}
               </div>

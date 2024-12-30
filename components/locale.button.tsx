@@ -1,7 +1,5 @@
 "use client";
-
-import * as React from "react";
-// import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
+import Image from "next/image";
 import { appConfig } from "@/lib/app.config";
 import { usePathname } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
@@ -13,7 +11,7 @@ import {
   DropdownMenuRadioItem,
 } from "@/components/ui/dropdown-menu";
 
-import { LanguagesIcon } from "lucide-react";
+import { GrLanguage } from "react-icons/gr";
 
 import { useLocale, useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -24,6 +22,7 @@ export function LocaleButton() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentLocale = useLocale();
+  const tc = useTranslations("common");
   const [locale, setLocale] = useState<string>(currentLocale);
   const { locales, localeLabels } = appConfig.i18n;
 
@@ -31,7 +30,7 @@ export function LocaleButton() {
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" size="sm">
-          <LanguagesIcon className="size-4" />
+          <GrLanguage className="size-4" /> {tc(locale)}
           <span className="sr-only">Change language</span>
         </Button>
       </DropdownMenuTrigger>
@@ -46,6 +45,13 @@ export function LocaleButton() {
           {locales.map((locale) => {
             return (
               <DropdownMenuRadioItem key={locale} value={locale}>
+                <Image
+                  src={`/assets/flags/${locale}.svg`}
+                  width={14}
+                  height={14}
+                  alt={`${locale}`}
+                  className="mr-2"
+                />
                 {locale in localeLabels ? localeLabels[locale] : locale}
               </DropdownMenuRadioItem>
             );

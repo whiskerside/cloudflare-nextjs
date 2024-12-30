@@ -1,8 +1,14 @@
 {
+  "common": {
+    "en": "English",
+    "cn": "Chinese",
+    "more": "More",
+    "moreDesc": "Get more ..."
+  },
   "home": {
     "hi": "Hey, There"
   },
-  "navigation": {
+  "navigations": {
     "home": "Home",
     "category": "Category",
     "more": "More",

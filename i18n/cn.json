@@ -1,0 +1,20 @@
+{
+  "common": {
+    "en": "English",
+    "cn": "中文",
+    "more": "More",
+    "moreDesc": "Get more ..."
+  },
+  "home": {
+    "hi": "Hey, There"
+  },
+  "navigations": {
+    "home": "主页",
+    "category": "分类",
+    "more": "更多",
+    "moreDesc": "查看更多",
+    "changeLog": "更新日志",
+    "login": "登录"
+  },
+  "footer": {}
+}

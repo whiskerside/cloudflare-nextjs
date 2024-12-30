@@ -110,7 +110,7 @@ export const Navigation = ({ items }: Navigations) => {
                               <ListItem
                                 title={tc("more")}
                                 href={item.href}
-                                className="capitalize border border-muted  bg-gradient-to-b  from-muted/50 to-muted/20"
+                                className="capitalize border border-muted bg-gradient-to-b from-muted/50 to-muted/20"
                               >
                                 {tc("moreDesc")}
                               </ListItem>
@@ -119,16 +119,15 @@ export const Navigation = ({ items }: Navigations) => {
                         </NavigationMenuContent>
                       </>
                     ) : (
-                      <Link href={item.href} legacyBehavior passHref>
-                        <NavigationMenuLink
-                          className={cn(
-                            navigationMenuTriggerStyle(),
-                            "font-medium",
-                            item.href === pathname && "font-extrabold"
-                          )}
-                        >
-                          {t(item.label)}
-                        </NavigationMenuLink>
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          navigationMenuTriggerStyle(),
+                          "font-medium",
+                          item.href === pathname && "font-extrabold"
+                        )}
+                      >
+                        {t(item.label)}
                       </Link>
                     )}
                   </NavigationMenuItem>

@@ -4,8 +4,11 @@ import { Inter } from "next/font/google";
 import { DM_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 
+import { ThemeProvider } from "next-themes";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
+
+import { Layout } from "@/components/layout";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -31,7 +34,9 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={cn(inter.className, sansFont.variable)}>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <ThemeProvider attribute="class">
+            <Layout>{children}</Layout>
+          </ThemeProvider>
         </NextIntlClientProvider>
       </body>
     </html>

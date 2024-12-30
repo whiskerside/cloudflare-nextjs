@@ -1,5 +1,14 @@
 {
   "home": {
     "hi": "Hey, There"
-  }
+  },
+  "navigation": {
+    "home": "Home",
+    "category": "Category",
+    "more": "More",
+    "moreDesc": "Get more",
+    "changeLog": "Change Log",
+    "login": "Login"
+  },
+  "footer": {}
 }

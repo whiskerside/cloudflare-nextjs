@@ -9,6 +9,8 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
 import { Layout } from "@/components/layout";
+import GoogleAdsenseScript from "@/components/ads/google.adsense.script";
+import { GoogleAnalyticsScript } from "@/components/analytics/google.analytics.script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -36,6 +38,8 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class">
             <Layout>{children}</Layout>
+            <GoogleAdsenseScript />
+            <GoogleAnalyticsScript />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

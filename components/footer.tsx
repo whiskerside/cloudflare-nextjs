@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@/i18n/routing";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -44,10 +45,12 @@ export function Footer() {
             <div className="flex w-full max-w-96 shrink flex-col items-center justify-between gap-6 lg:items-start">
               <div>
                 <span className="flex items-center justify-center gap-4 lg:justify-start">
-                  <img
-                    src="https://shadcnblocks.com/images/block/block-1.svg"
-                    alt="logo"
+                  <Image
+                    src="/assets/block.svg"
+                    width={42}
+                    height={42}
                     className="h-11"
+                    alt={"logo"}
                   />
                   <p className="text-3xl font-semibold">Shadcnblocks</p>
                 </span>

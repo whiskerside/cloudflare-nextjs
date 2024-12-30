@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { MenuIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
@@ -29,7 +30,6 @@ export const Navigation = ({ items }: Navigations) => {
   const t = useTranslations("navigations");
 
   const isMenuItemActive = (href: string) => {
-    // console.log(pathname, href);
     return pathname === href;
   };
 
@@ -70,13 +70,13 @@ export const Navigation = ({ items }: Navigations) => {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
-            {/* <Image
-              src={IconImage}
-              className="block"
-              width={size}
-              height={size}
-              alt="DomainScore"
-            /> */}
+            <Image
+              src="/assets/block.svg"
+              width={42}
+              height={42}
+              className="h-11"
+              alt={"logo"}
+            />
             <span className="inline-block font-bold">Nextjs</span>
           </Link>
           <nav className="hidden md:flex gap-6">

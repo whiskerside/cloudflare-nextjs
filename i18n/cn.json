@@ -5,6 +5,11 @@
     "more": "More",
     "moreDesc": "Get more ..."
   },
+  "theme": {
+    "system": "自动",
+    "light": "亮色",
+    "dark": "暗色"
+  },
   "home": {
     "hi": "Hey, There"
   },

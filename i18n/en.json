@@ -5,6 +5,11 @@
     "more": "More",
     "moreDesc": "Get more ..."
   },
+  "theme": {
+    "system": "Auto",
+    "light": "Light",
+    "dark": "Dark"
+  },
   "home": {
     "hi": "Hey, There"
   },

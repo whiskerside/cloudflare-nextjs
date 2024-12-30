@@ -12,23 +12,21 @@ import {
   DropdownMenuRadioGroup,
   DropdownMenuRadioItem,
 } from "@/components/ui/dropdown-menu";
+import { useTranslations } from "next-intl";
 
 import { HardDriveIcon, MoonIcon, SunIcon } from "lucide-react";
 
 const colorModeOptions = [
   {
     value: "system",
-    label: "System",
     icon: HardDriveIcon,
   },
   {
     value: "light",
-    label: "Light",
     icon: SunIcon,
   },
   {
     value: "dark",
-    label: "Dark",
     icon: MoonIcon,
   },
 ];
@@ -36,6 +34,7 @@ const colorModeOptions = [
 export function ThemeModeButton() {
   const { setTheme: setCurrentTheme, theme: currentTheme } = useTheme();
   const [theme, setTheme] = useState<string>(currentTheme ?? "system");
+  const t = useTranslations("theme");
 
   return (
     <DropdownMenu>
@@ -57,7 +56,7 @@ export function ThemeModeButton() {
           {colorModeOptions.map((option) => (
             <DropdownMenuRadioItem key={option.value} value={option.value}>
               <option.icon className="mr-2 size-4 opacity-50" />
-              {option.label}
+              {t(option.value)}
             </DropdownMenuRadioItem>
           ))}
         </DropdownMenuRadioGroup>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 import type { Metadata } from "next";
 
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const t = useTranslations("home");
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -16,7 +18,7 @@ export default function Home() {
           Get started by editing&nbsp;
           <code className="font-mono font-bold">src/app/page.tsx</code>
         </p>
-        <Link href="/about">about</Link>
+        <Link href="/about">about {t("hi")}</Link>
       </div>
     </main>
   );

@@ -18,7 +18,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Navigations } from "@/lib/types";
-// import { ThemeModeButton } from "@/components/ThemeModeButton";
+import { ThemeModeButton } from "@/components/theme.mode.button";
 import { LocaleButton } from "@/components/locale.button";
 
 export const Navigation = ({ items }: Navigations) => {
@@ -144,7 +144,7 @@ export const Navigation = ({ items }: Navigations) => {
             </Button>
           </Link>
           <div className="flex items-center gap-1">
-            {/* <ThemeModeButton /> */}
+            <ThemeModeButton />
             <LocaleButton />
           </div>
           <Sheet

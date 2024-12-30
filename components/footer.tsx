@@ -47,9 +47,8 @@ export function Footer() {
                 <span className="flex items-center justify-center gap-4 lg:justify-start">
                   <Image
                     src="/assets/block.svg"
-                    width={42}
-                    height={42}
-                    className="h-11"
+                    width={44}
+                    height={33}
                     alt={"logo"}
                   />
                   <p className="text-3xl font-semibold">Shadcnblocks</p>

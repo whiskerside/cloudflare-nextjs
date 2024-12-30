@@ -16,7 +16,7 @@ export async function Layout({
   return (
     <div className="min-h-screen bg-background font-sans antialiased">
       <Navigation items={navigations.items} />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 max-w-screen-lg mx-auto">{children}</main>
       <Footer />
     </div>
   );

@@ -72,9 +72,8 @@ export const Navigation = ({ items }: Navigations) => {
           <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/assets/block.svg"
-              width={42}
-              height={42}
-              className="h-11"
+              width={24}
+              height={18}
               alt={"logo"}
             />
             <span className="inline-block font-bold">Nextjs</span>

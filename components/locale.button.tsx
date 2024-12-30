@@ -47,7 +47,7 @@ export function LocaleButton() {
               <DropdownMenuRadioItem key={locale} value={locale}>
                 <Image
                   src={`/assets/flags/${locale}.svg`}
-                  width={14}
+                  width={18}
                   height={14}
                   alt={`${locale}`}
                   className="mr-2"

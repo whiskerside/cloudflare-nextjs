@@ -54,11 +54,5 @@ export const appConfig = {
         },
       ],
     },
-    {
-      label: "changeLog",
-      href: "/changelog",
-      trigger: false,
-      hasMore: false,
-    },
   ],
 };

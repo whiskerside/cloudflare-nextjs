@@ -9,4 +9,6 @@ export type NavigationItem = {
 
 export type Navigations = {
   items: NavigationItem[];
+  loginRequired: boolean;
+  multipleLangs: boolean;
 };

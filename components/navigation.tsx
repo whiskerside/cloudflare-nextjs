@@ -22,7 +22,12 @@ import { Navigations } from "@/lib/types";
 import { ThemeModeButton } from "@/components/theme.mode.button";
 import { LocaleButton } from "@/components/locale.button";
 
-export const Navigation = ({ items }: Navigations) => {
+export const Navigation = ({
+  items,
+  loginRequired,
+  multipleLangs,
+  ...props
+}: Navigations) => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -136,14 +141,17 @@ export const Navigation = ({ items }: Navigations) => {
           </nav>
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/login" className="hidden md:block">
-            <Button variant="outline" className="text-sm tracking-tight">
-              {t("login")}
-            </Button>
-          </Link>
+          {loginRequired && (
+            <Link href="/login" className="hidden md:block">
+              <Button variant="outline" className="text-sm tracking-tight">
+                {t("login")}
+              </Button>
+            </Link>
+          )}
+
           <div className="flex items-center gap-1">
             <ThemeModeButton />
-            <LocaleButton />
+            {multipleLangs && <LocaleButton />}
           </div>
           <Sheet
             open={mobileMenuOpen}

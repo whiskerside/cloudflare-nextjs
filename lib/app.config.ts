@@ -29,7 +29,7 @@ export const appConfig = {
       label: "category",
       href: "/category",
       trigger: true,
-      // hasMore: true,
+      hasMore: false,
       childs: [
         {
           label: "analytics",

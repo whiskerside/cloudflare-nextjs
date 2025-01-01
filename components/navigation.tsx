@@ -72,7 +72,7 @@ export const Navigation = ({
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background px-3">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="flex h-16 items-center justify-between">
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
             <Image

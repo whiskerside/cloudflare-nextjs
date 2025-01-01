@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Grid() {
   return (
-    <section className="py-20">
+    <section className="pb-20">
       <div className="container p-4">
         <div className="mb-10">
           <h2 className="mb-2 text-center md:text-3xl font-semibold">

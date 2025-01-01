@@ -9,7 +9,8 @@ import HeroDefault from "@/components/heros/hero.default";
 import HeroText from "@/components/heros/hero.text";
 import FaqDefault from "@/components/faqs/faq.normal";
 import FaqSimple from "@/components/faqs/faq.simple";
-import Grid from "@/components/recommends/grid";
+import Grid from "@/components/games/recommends/grid";
+import HeroGame from "@/components/games/heros/hero.game";
 
 export const metadata: Metadata = {
   title: "Homepage",
@@ -20,11 +21,12 @@ export default function Home() {
   const t = useTranslations("home");
   return (
     <>
-      <HeroText />
+      {/* <HeroText /> */}
       {/* <HeroDefault /> */}
       {/* <FeatureValues /> */}
       {/* <FeatureWhy /> */}
       {/* <FaqDefault /> */}
+      <HeroGame />
       <Grid />
       <FaqSimple />
     </>

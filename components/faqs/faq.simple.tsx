@@ -25,11 +25,11 @@ const faqs = [
 
 const FaqSimple = () => {
   return (
-    <section className="py-32">
-      <div className="container">
+    <section className="py-20">
+      <div className="container p-4">
         <div className="text-center">
           <Badge className="text-xs font-medium">FAQ</Badge>
-          <h1 className="mt-4 text-4xl font-semibold">
+          <h1 className="mt-2 mb-4 text-xl font-semibold md:mb-11 md:text-4xl">
             Common Questions & Answers
           </h1>
           <p className="mt-6 font-medium text-muted-foreground">

@@ -30,9 +30,9 @@ const FaqDefault = () => {
   ];
 
   return (
-    <section className="py-32">
-      <div className="container">
-        <h1 className="mb-4 text-3xl font-semibold md:mb-11 md:text-5xl">
+    <section className="py-20">
+      <div className="container p-4">
+        <h1 className="mb-4 text-xl font-semibold md:mb-11 md:text-4xl">
           Frequently asked questions
         </h1>
         {faqs.map((faq, index) => (

@@ -6,7 +6,7 @@ import type { Metadata } from "next";
 import FeatureWhy from "@/components/features/feature.why";
 import FeatureValues from "@/components/features/feature.values";
 import HeroDefault from "@/components/heros/hero.default";
-import HeroText from "@/components/heros/hero.s";
+import HeroText from "@/components/heros/hero.text";
 import FaqDefault from "@/components/faqs/faq.normal";
 import FaqSimple from "@/components/faqs/faq.simple";
 

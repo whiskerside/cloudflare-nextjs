@@ -48,10 +48,10 @@ const reasons = [
 
 export default function FeatureWhy() {
   return (
-    <section className="py-32">
-      <div className="container">
+    <section className="py-20">
+      <div className="container p-4">
         <div className="mb-10 md:mb-20">
-          <h2 className="mb-2 text-center text-3xl font-semibold lg:text-5xl">
+          <h2 className="mb-2 text-center text-3xl font-semibold lg:text-4xl">
             Why Work With Us?
           </h2>
         </div>

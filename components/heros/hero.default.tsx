@@ -5,8 +5,8 @@ import { Button } from "@/components/ui/button";
 
 const HeroDefault = () => {
   return (
-    <section className="py-16">
-      <div className="container">
+    <section className="py-20">
+      <div className="container p-4">
         <div className="grid items-center gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
             <Badge variant="outline">

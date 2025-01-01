@@ -9,6 +9,7 @@ import HeroDefault from "@/components/heros/hero.default";
 import HeroText from "@/components/heros/hero.text";
 import FaqDefault from "@/components/faqs/faq.normal";
 import FaqSimple from "@/components/faqs/faq.simple";
+import Grid from "@/components/recommends/grid";
 
 export const metadata: Metadata = {
   title: "Homepage",
@@ -24,6 +25,7 @@ export default function Home() {
       {/* <FeatureValues /> */}
       {/* <FeatureWhy /> */}
       {/* <FaqDefault /> */}
+      <Grid />
       <FaqSimple />
     </>
   );

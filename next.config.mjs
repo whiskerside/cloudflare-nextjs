@@ -9,6 +9,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "favicon.im",
       },
+      {
+        protocol: "https",
+        hostname: "img.gamemonetize.com",
+      },
     ],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

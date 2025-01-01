@@ -20,10 +20,10 @@ export default function Home() {
   return (
     <>
       <HeroText />
-      <HeroDefault />
-      <FeatureValues />
-      <FeatureWhy />
-      <FaqDefault />
+      {/* <HeroDefault /> */}
+      {/* <FeatureValues /> */}
+      {/* <FeatureWhy /> */}
+      {/* <FaqDefault /> */}
       <FaqSimple />
     </>
   );

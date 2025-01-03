@@ -2,7 +2,10 @@
 
 import Script from "next/script";
 
-const googleAdsenseId = process.env.PUBLIC_GOOGLE_ADSENSE_ID!;
+const googleAdsenseId =
+  process.env.NODE_ENV === "production"
+    ? process.env.PUBLIC_GOOGLE_ADSENSE_ID!
+    : "";
 
 const GoogleAdsenseScript = () => {
   return googleAdsenseId ? (

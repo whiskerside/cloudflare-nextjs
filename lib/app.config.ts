@@ -1,4 +1,7 @@
 export const appConfig = {
+  name: "Nextjs",
+  url: "https://example.com",
+
   i18n: {
     locales: ["en", "cn"] as const,
     defaultLocale: "en" as const,
@@ -22,43 +25,35 @@ export const appConfig = {
     {
       label: "home",
       href: "/",
-      trigger: false,
-      hasMore: false,
     },
-    {
-      label: "category",
-      href: "/category",
-      trigger: true,
-      hasMore: true,
-      childs: [
-        {
-          label: "analytics",
-          href: "analytics",
-          trigger: false,
-          hasMore: false,
-          description: "Tools for tracking and analyzing website data.",
-        },
-        {
-          label: "database",
-          href: "database",
-          trigger: false,
-          hasMore: false,
-          description: "Services for storing and managing data.",
-        },
-        {
-          label: "deployment",
-          href: "deployment",
-          trigger: false,
-          hasMore: false,
-          description: "Tools for automating application deployment.",
-        },
-      ],
-    },
-    {
-      label: "changeLog",
-      href: "/changelog",
-      trigger: false,
-      hasMore: false,
-    },
+    // {
+    //   label: "category",
+    //   href: "/category",
+    //   trigger: true,
+    //   hasMore: true,
+    //   childs: [
+    //     {
+    //       label: "analytics",
+    //       href: "analytics",
+    //       trigger: false,
+    //       hasMore: false,
+    //       description: "Tools for tracking and analyzing website data.",
+    //     },
+    //     {
+    //       label: "database",
+    //       href: "database",
+    //       trigger: false,
+    //       hasMore: false,
+    //       description: "Services for storing and managing data.",
+    //     },
+    //     {
+    //       label: "deployment",
+    //       href: "deployment",
+    //       trigger: false,
+    //       hasMore: false,
+    //       description: "Tools for automating application deployment.",
+    //     },
+    //   ],
+    // },
   ],
 };

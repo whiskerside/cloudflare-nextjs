@@ -11,12 +11,22 @@ export async function Layout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
-  const navigations: Navigations = { items: appConfig.navigations };
+  const navigations: Navigations = {
+    items: appConfig.navigations,
+    loginEnabled: false,
+    langsEnabled: false,
+    themeSwitched: false,
+  };
 
   return (
-    <div className="min-h-screen bg-background font-sans antialiased">
-      <Navigation items={navigations.items} />
-      <main className="flex-1">{children}</main>
+    <div className="bg-background font-sans antialiased">
+      <Navigation
+        items={navigations.items}
+        loginEnabled={navigations.loginEnabled}
+        langsEnabled={navigations.langsEnabled}
+        themeSwitched={navigations.themeSwitched}
+      />
+      <main className="flex flex-col min-h-screen ">{children}</main>
       <Footer />
     </div>
   );

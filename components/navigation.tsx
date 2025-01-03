@@ -22,7 +22,13 @@ import { Navigations } from "@/lib/types";
 import { ThemeModeButton } from "@/components/theme.mode.button";
 import { LocaleButton } from "@/components/locale.button";
 
-export const Navigation = ({ items }: Navigations) => {
+export const Navigation = ({
+  items,
+  loginEnabled,
+  langsEnabled,
+  themeSwitched,
+  ...props
+}: Navigations) => {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -67,7 +73,7 @@ export const Navigation = ({ items }: Navigations) => {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background px-3">
-      <div className="container flex h-16 items-center justify-between">
+      <div className="max-w-screen-xl mx-auto flex h-16 items-center justify-between">
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
             <Image
@@ -137,14 +143,16 @@ export const Navigation = ({ items }: Navigations) => {
           </nav>
         </div>
         <div className="flex items-center gap-3">
-          <Link href="/login" className="hidden md:block">
-            <Button variant="outline" className="text-sm tracking-tight">
-              {t("login")}
-            </Button>
-          </Link>
+          {loginEnabled && (
+            <Link href="/login" className="hidden md:block">
+              <Button variant="outline" className="text-sm tracking-tight">
+                {t("login")}
+              </Button>
+            </Link>
+          )}
           <div className="flex items-center gap-1">
-            <ThemeModeButton />
-            <LocaleButton />
+            {themeSwitched && <ThemeModeButton />}
+            {langsEnabled && <LocaleButton />}
           </div>
           <Sheet
             open={mobileMenuOpen}

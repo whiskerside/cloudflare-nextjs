@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import createMiddleware from "next-intl/middleware";
-import { appConfig } from "./lib//app.config";
+import { appConfig } from "@/lib/app.config";
 
 const intlMiddleware = createMiddleware({
   // A list of all locales that are supported

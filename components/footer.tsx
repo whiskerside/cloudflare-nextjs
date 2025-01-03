@@ -44,10 +44,10 @@ export function Footer() {
           <p>© 2025 Shadcnblocks. All rights reserved.</p>
           <ul className="flex mt-2 justify-center gap-6">
             <li className="hover:text-primary">
-              <a href="#"> Terms</a>
+              <a href="/terms">Terms</a>
             </li>
             <li className="hover:text-primary">
-              <a href="#"> Privacy</a>
+              <a href="/privacy">Privacy</a>
             </li>
           </ul>
         </div>

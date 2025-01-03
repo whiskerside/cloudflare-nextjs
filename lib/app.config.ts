@@ -1,5 +1,6 @@
 export const appConfig = {
   name: "Nextjs",
+  email: "support@exaple.com",
   url: "https://example.com",
 
   i18n: {

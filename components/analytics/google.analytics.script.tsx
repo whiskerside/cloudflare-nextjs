@@ -2,7 +2,8 @@
 
 import Script from "next/script";
 
-const googleAnalyticsId = process.env.PUBLIC_GOOGLE_ANALYTICS_ID!;
+const googleAnalyticsId =
+  process.env.NODE_ENV === "development" ? "" : "G-NJSC8P370Z";
 
 export function GoogleAnalyticsScript() {
   return googleAnalyticsId ? (

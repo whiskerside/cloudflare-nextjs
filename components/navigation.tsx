@@ -81,9 +81,9 @@ export const Navigation = ({
               height={18}
               alt={"logo"}
             />
-            <span className="inline-block font-bold">Nextjs</span>
+            <span className="inline-block font-bold">Sprunki Corruptbox</span>
           </Link>
-          <nav className="hidden md:flex gap-6">
+          {/* <nav className="hidden md:flex gap-6">
             <NavigationMenu>
               <NavigationMenuList>
                 {items.map((item) => (
@@ -138,7 +138,7 @@ export const Navigation = ({
                 ))}
               </NavigationMenuList>
             </NavigationMenu>
-          </nav>
+          </nav> */}
         </div>
         <div className="flex items-center gap-3">
           {loginRequired && (

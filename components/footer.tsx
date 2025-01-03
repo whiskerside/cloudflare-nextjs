@@ -36,10 +36,10 @@ export function Footer() {
   const t = useTranslations("footer");
 
   return (
-    <section className="py-16 px-5 bg-gray-100 dark:bg-gray-900">
+    <section className="pt-5 pb-8 px-5 bg-gray-100 dark:bg-gray-900">
       <div className="containers max-w-screen-lg mx-auto">
         <footer>
-          <div className="flex flex-col items-center justify-between gap-10 text-center lg:flex-row lg:text-left">
+          {/* <div className="flex flex-col items-center justify-between gap-10 text-center lg:flex-row lg:text-left">
             <div className="flex w-full max-w-96 shrink flex-col items-center justify-between gap-6 lg:items-start">
               <div>
                 <span className="flex items-center justify-center gap-4 lg:justify-start">
@@ -49,7 +49,7 @@ export function Footer() {
                     height={33}
                     alt={"logo"}
                   />
-                  <p className="text-3xl font-semibold">Nextjs</p>
+                  <p className="text-3xl font-semibold">Sprunki Corruptbox</p>
                 </span>
                 <p className="mt-6 text-sm text-muted-foreground">
                   A collection of 100+ responsive HTML templates for your
@@ -96,9 +96,9 @@ export function Footer() {
                 </div>
               ))}
             </div>
-          </div>
-          <div className="mt-5 border-t pt-8 text-center text-sm font-medium text-muted-foreground">
-            <p>© 2025 Nextjs. All rights reserved.</p>
+          </div> */}
+          <div className="mt-5 border-0 pt-8 text-center text-sm font-medium text-muted-foreground">
+            <p>© 2025 Corruptbox Free. All rights reserved.</p>
           </div>
         </footer>
       </div>

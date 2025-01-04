@@ -8,7 +8,7 @@ export function Footer() {
 
   return (
     <footer className="py-6 bg-gray-100 dark:bg-gray-900">
-      <section className="flex flex-col max-w-screen-2xl items-center justify-between">
+      <section className="flex flex-col max-w-screen-2xl mx-auto items-center justify-between">
         <div className="space-x-2 text-sm text-muted-foreground ">
           <p>© 2025 {appConfig.name}. All rights reserved.</p>
           <ul className="flex mt-2 justify-center gap-6">

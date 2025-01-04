@@ -26,7 +26,7 @@ export async function Layout({
         langsEnabled={navigations.langsEnabled}
         themeSwitched={navigations.themeSwitched}
       />
-      <main className="flex flex-col min-h-screen ">{children}</main>
+      <main className="flex flex-col min-h-screen px-3 pb-5">{children}</main>
       <Footer />
     </div>
   );

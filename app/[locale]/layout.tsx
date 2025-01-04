@@ -39,9 +39,16 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
   const messages = await getMessages();
+
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={cn(inter.className, sansFont.variable)}>
+      <body
+        className={
+          process.env.NODE_ENV === "production"
+            ? cn(inter.className, sansFont.variable)
+            : cn(sansFont.variable)
+        }
+      >
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider attribute="class">
             <Layout>{children}</Layout>

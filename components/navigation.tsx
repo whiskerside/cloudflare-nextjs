@@ -73,14 +73,14 @@ export const Navigation = ({
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background px-3">
-      <div className="max-w-screen-xl mx-auto flex h-16 items-center justify-between">
+      <div className="max-w-screen-xl mx-auto flex py-2 items-center justify-between">
         <div className="flex gap-6 md:gap-10">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/assets/block.svg"
-              width={42}
-              height={42}
-              className="h-11"
+              src="/favicon-192x192.png"
+              width={48}
+              height={48}
+              priority={true}
               alt={"logo"}
             />
             <span className="inline-block font-bold">Nextjs</span>

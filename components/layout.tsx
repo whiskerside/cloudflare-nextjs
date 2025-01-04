@@ -1,6 +1,6 @@
 import React from "react";
 import { appConfig } from "@/lib/app.config";
-import { Navigations } from "@/lib/types";
+import { Navigations } from "@/types/navigations";
 import { getLocale } from "next-intl/server";
 import { Navigation } from "./navigation";
 import { Footer } from "./footer";

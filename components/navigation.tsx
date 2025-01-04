@@ -18,7 +18,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Navigations } from "@/lib/types";
+import { Navigations } from "@/types/navigations";
 import { ThemeModeButton } from "@/components/theme.mode.button";
 import { LocaleButton } from "@/components/locale.button";
 
@@ -85,7 +85,6 @@ export const Navigation = ({
             />
             <span className="inline-block font-bold">Nextjs</span>
           </Link>
-          {/* <nav className="hidden md:flex gap-6"> */}
           <NavigationMenu className="hidden md:flex gap-6">
             <NavigationMenuList>
               {items.map((item) => (
@@ -140,7 +139,6 @@ export const Navigation = ({
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-          {/* </nav> */}
         </div>
         <div className="flex items-center gap-3">
           {loginEnabled && (

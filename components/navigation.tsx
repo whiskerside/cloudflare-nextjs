@@ -7,7 +7,14 @@ import { useTranslations } from "next-intl";
 import { useState, useEffect } from "react";
 import { Link, usePathname } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 import {
   NavigationMenu,
@@ -21,6 +28,7 @@ import {
 import { Navigations } from "@/types/navigations";
 import { ThemeModeButton } from "@/components/theme.mode.button";
 import { LocaleButton } from "@/components/locale.button";
+import { appConfig } from "@/lib/app.config";
 
 export const Navigation = ({
   items,
@@ -167,13 +175,17 @@ export const Navigation = ({
               </Button>
             </SheetTrigger>
             <SheetContent className="w-[250px]" side="right">
+              <SheetHeader>
+                <SheetTitle></SheetTitle>
+                <SheetDescription></SheetDescription>
+              </SheetHeader>
               <div className="flex flex-col items-start justify-center">
                 {items.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "block px-3 py-2 text-lg",
+                      "block text-md",
                       isMenuItemActive(item.href) ? "font-bold" : ""
                     )}
                   >

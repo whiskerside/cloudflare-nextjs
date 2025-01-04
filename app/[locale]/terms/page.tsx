@@ -91,7 +91,7 @@ export default function Terms() {
           notice. However,
           {appConfig.name} does not make any commitment to update the materials.
         </p>
-        <h2>Links</h2>
+        <h2 className="text-3xl">Links</h2>
         <p>
           {appConfig.name} has not reviewed all of the sites linked to its
           website and is not responsible for the contents of any such linked

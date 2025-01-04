@@ -85,62 +85,62 @@ export const Navigation = ({
             />
             <span className="inline-block font-bold">Nextjs</span>
           </Link>
-          <nav className="hidden md:flex gap-6">
-            <NavigationMenu>
-              <NavigationMenuList>
-                {items.map((item) => (
-                  <NavigationMenuItem key={item.href}>
-                    {item.trigger && item.childs ? (
-                      <>
-                        <NavigationMenuTrigger
-                          className={cn(
-                            "font-medium",
-                            item.href === pathname && "font-extrabold"
-                          )}
-                        >
-                          {t(item.label)}
-                        </NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-3 lg:w-[600px] ">
-                            {item.childs.map((child) => (
-                              <ListItem
-                                key={child.label}
-                                title={child.label}
-                                href={`/category/${child.href}`}
-                                className="capitalize"
-                              >
-                                {child.description}
-                              </ListItem>
-                            ))}
-                            {item.hasMore ? (
-                              <ListItem
-                                title={tc("more")}
-                                href={item.href}
-                                className="capitalize border border-muted bg-gradient-to-b from-muted/50 to-muted/20"
-                              >
-                                {tc("moreDesc")}
-                              </ListItem>
-                            ) : null}
-                          </ul>
-                        </NavigationMenuContent>
-                      </>
-                    ) : (
-                      <Link
-                        href={item.href}
+          {/* <nav className="hidden md:flex gap-6"> */}
+          <NavigationMenu className="hidden md:flex gap-6">
+            <NavigationMenuList>
+              {items.map((item) => (
+                <NavigationMenuItem key={item.href}>
+                  {item.trigger && item.childs ? (
+                    <>
+                      <NavigationMenuTrigger
                         className={cn(
-                          navigationMenuTriggerStyle(),
                           "font-medium",
                           item.href === pathname && "font-extrabold"
                         )}
                       >
                         {t(item.label)}
-                      </Link>
-                    )}
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </nav>
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-3 lg:w-[600px] ">
+                          {item.childs.map((child) => (
+                            <ListItem
+                              key={child.label}
+                              title={child.label}
+                              href={`/category/${child.href}`}
+                              className="capitalize"
+                            >
+                              {child.description}
+                            </ListItem>
+                          ))}
+                          {item.hasMore ? (
+                            <ListItem
+                              title={tc("more")}
+                              href={item.href}
+                              className="capitalize border border-muted bg-gradient-to-b from-muted/50 to-muted/20"
+                            >
+                              {tc("moreDesc")}
+                            </ListItem>
+                          ) : null}
+                        </ul>
+                      </NavigationMenuContent>
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "font-medium",
+                        item.href === pathname && "font-extrabold"
+                      )}
+                    >
+                      {t(item.label)}
+                    </Link>
+                  )}
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+          {/* </nav> */}
         </div>
         <div className="flex items-center gap-3">
           {loginEnabled && (

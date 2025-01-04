@@ -9,12 +9,11 @@ export const metadata: Metadata = {
 };
 
 export default function Privacy() {
-  console.log(appConfig.name);
   return (
     <div className="max-w-screen-xl mx-auto py-12 flex flex-col items-center justify-center">
       <h1 className="text-4xl font-bold mb-4">Privacy Policy</h1>
       <div className="max-w-screen-md text-sm space-y-4">
-        <p>Last updated: 2024-12-08</p>
+        <p>Last updated: 2025-01-01</p>
         <h2 className="text-3xl">Overview</h2>
         <p>
           Welcome to {appConfig.name} ({appConfig.url}). This Privacy Policy
@@ -27,10 +26,11 @@ export default function Privacy() {
         <p>
           We collect personal data that you voluntarily provide to us when you
           register on our site, place an order, subscribe to our newsletter, or
-          engage in other activities on Corruptbox.im. This may include, but is
-          not limited to: Name Email Address Payment Information Contact Details
-          This information is collected for purposes such as order processing,
-          providing customer support, and delivering personalized services.
+          engage in other activities on {appConfig.url}. This may include, but
+          is not limited to: Name Email Address Payment Information Contact
+          Details This information is collected for purposes such as order
+          processing, providing customer support, and delivering personalized
+          services.
         </p>
         <h3 className="text-2xl">Non-Personal Data</h3>
         <p>
@@ -56,9 +56,11 @@ export default function Privacy() {
           <li>Ensuring compliance with legal obligations</li>
         </ul>
         <h2 className="text-3xl">Data Sharing</h2>
-        {appConfig.name} respects your privacy and does not sell, trade, or
-        otherwise transfer your personal data to third parties without your
-        consent, except:
+        <p>
+          {appConfig.name} respects your privacy and does not sell, trade, or
+          otherwise transfer your personal data to third parties without your
+          consent, except:
+        </p>
         <ul className="mx-4 gap-4 list-inside list-disc">
           <li>
             To service providers who assist us in operating our website,
@@ -122,8 +124,8 @@ export default function Privacy() {
         <h2 className="text-3xl">Contact Us</h2>
         <p>
           If you have any questions, concerns, or feedback regarding our Privacy
-          Policy, please contact us at support@corruptbox.im. We are committed
-          to addressing your inquiries and will strive to respond as promptly as
+          Policy, please contact us at {appConfig.email}. We are committed to
+          addressing your inquiries and will strive to respond as promptly as
           possible.
         </p>
         <p>Thank you for visiting {appConfig.name}!</p>
